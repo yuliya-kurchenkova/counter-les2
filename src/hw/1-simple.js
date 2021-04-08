@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Some extends React.Component{
+export default class extends React.Component{
+    static propTypes = {
+        min: PropTypes.number.isRequired,
+        max: PropTypes.number.isRequired
+    }
 
     state = {
         cnt: this.props.min
@@ -35,8 +39,3 @@ export default class Some extends React.Component{
 //     max: 5
 // };
 //
-Some.propTypes = {
-    min: PropTypes.number.isRequired,
-    max: PropTypes.number.isRequired
-
-}
