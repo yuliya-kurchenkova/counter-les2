@@ -9,6 +9,7 @@ export default class extends React.Component{
 
     increase = () => {
         let cnt = this.state.cnt + 1;
+        Math.min(cnt, this.props.max)
 
         if(cnt > this.props.max) {
             cnt = this.props.max
@@ -18,6 +19,7 @@ export default class extends React.Component{
     }
     decrease = () => {
         let cnt = this.state.cnt - 1;
+        Math.max(cnt, this.props.min)
 
         if(cnt < this.props.min) {
             cnt = this.props.min
