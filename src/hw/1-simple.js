@@ -1,30 +1,19 @@
 import React from 'react';
 
 export default class extends React.Component{
-    // this.props
 
     state = {
         cnt: this.props.min
     };
 
     increase = () => {
-        let cnt = this.state.cnt + 1;
-        Math.min(cnt, this.props.max)
-
-        if(cnt > this.props.max) {
-            cnt = this.props.max
-        }
-
-        this.setState({cnt});
+        this.set(this.state.cnt + 1)
     }
     decrease = () => {
-        let cnt = this.state.cnt - 1;
-        Math.max(cnt, this.props.min)
-
-        if(cnt < this.props.min) {
-            cnt = this.props.min
-        }
-
+        this.set(this.state.cnt - 1)
+    }
+    set(newCnt){
+        let cnt = Math.min(Math.max(newCnt, this.props.min), this.props.max);
         this.setState({cnt});
     }
 
