@@ -20,7 +20,7 @@ export default function (){
             <h2>Lazy input</h2>
             <HW3 min={20} max={50}/>
             <h2>Derived input</h2>
-            <Derived min={someMin} max={50}/>
+            <Derived min={someMin} max={50} key={someMin + 50}/>
         </div>
     )
 }
